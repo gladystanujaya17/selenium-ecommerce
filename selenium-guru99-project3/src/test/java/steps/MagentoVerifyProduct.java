@@ -51,11 +51,11 @@ public class MagentoVerifyProduct {
 
 	@Then("User change the QTY")
 	public void userChangeTheQTY() {
-		// Using CSS Selectors ID
 //		WebElement changeQty = driver.findElement(By.xpath("//*[@id=\"qty\"]"));
 //	    changeQty.clear();
 //	    changeQty.sendKeys("1000");
 //	    changeQty.sendKeys(Keys.ENTER);
+		// Using CSS Selectors ID
 		driver.findElement(By.xpath(".//*[@id='shopping-cart-table']/tbody/tr/td[4]/input")).clear();	    
 	    driver.findElement(By.xpath(".//*[@id='shopping-cart-table']/tbody/tr/td[4]/input")).sendKeys("1000");	
 	    driver.findElement(By.xpath(".//*[@id='shopping-cart-table']/tbody/tr/td[4]/button")).click();
@@ -74,9 +74,9 @@ public class MagentoVerifyProduct {
 	    scc = (scc + 1);
 	    File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	    String png = ("D:\\Guru99 eCommerce Live Project\\Day03_TestCase3\\Cart is empty " + scc + ".png");
-		FileUtils.copyFile(screenshotFile, new File(png));
-		Thread.sleep(2000);
-		driver.quit();
+	    FileUtils.copyFile(screenshotFile, new File(png));
+	    Thread.sleep(2000);
+	    driver.quit();
 	}
 	
 }
