@@ -65,9 +65,7 @@ public class MagentoCost {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		// try to add if else too (later)
-		
+				
 		Thread.sleep(2000);
 		driver.quit();
 	}
