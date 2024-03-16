@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,7 +37,9 @@ public class MagentoCost {
 
 	@Then("User is in Mobile page")
 	public void userIsInMobilePage() {
-	    System.out.println("Mobile page text: " + driver.findElement(By.cssSelector("h1")).getText());
+		System.out.println("Mobile page text: " + driver.findElement(By.cssSelector("h1")).getText());
+		boolean mobileText = driver.findElement(By.xpath("//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[1]/h1")).isDisplayed();
+		Assert.assertTrue(mobileText);
 	}
 
 	@Then("User is read the cost of Sony Xperia mobile")
