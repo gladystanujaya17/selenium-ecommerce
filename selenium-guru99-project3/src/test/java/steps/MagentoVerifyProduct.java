@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -41,7 +42,10 @@ public class MagentoVerifyProduct {
 
 	@Then("User is in Mobile page")
 	public void userIsInMobilePage() {
-		System.out.println("Mobile page text: " + driver.findElement(By.cssSelector("h1")).getText());
+	    System.out.println("Mobile page text: " + driver.findElement(By.cssSelector("h1")).getText());
+		boolean mobileText = driver.findElement(By.xpath("//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[1]/h1")).isDisplayed();
+		Assert.assertTrue(mobileText);
+		
 	}
 
 	@When("User click Add Cart in Sony Xperia mobile")
@@ -51,10 +55,6 @@ public class MagentoVerifyProduct {
 
 	@Then("User change the QTY")
 	public void userChangeTheQTY() {
-//		WebElement changeQty = driver.findElement(By.xpath("//*[@id=\"qty\"]"));
-//	    changeQty.clear();
-//	    changeQty.sendKeys("1000");
-//	    changeQty.sendKeys(Keys.ENTER);
 		// Using CSS Selectors ID
 		driver.findElement(By.xpath(".//*[@id='shopping-cart-table']/tbody/tr/td[4]/input")).clear();	    
 	    driver.findElement(By.xpath(".//*[@id='shopping-cart-table']/tbody/tr/td[4]/input")).sendKeys("1000");	
