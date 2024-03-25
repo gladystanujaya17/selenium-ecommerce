@@ -1,4 +1,4 @@
-package steps;
+package test.Cucumber;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;

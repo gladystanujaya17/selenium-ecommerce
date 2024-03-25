@@ -6,12 +6,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -61,7 +64,7 @@ public class MagentoPurchase {
 
 	@Then("User click Add to Cart")
 	public void userClickAddToCart() {
-	    driver.findElement(By.xpath("//*[@id=\"item_75686\"]/td[5]/div/button")).click();
+	    driver.findElement(By.xpath("//*[@id=\"item_75830\"]/td[5]/div/button")).click();
 	}
 
 	@Then("User click Proceed to Checkout")
@@ -95,7 +98,12 @@ public class MagentoPurchase {
 	}
 
 	@Then("Verify shipping cost is added to total")
-	public void verifyShippingCostIsAddedToTotal() throws IOException {
+	public void verifyShippingCostIsAddedToTotal() throws IOException, InterruptedException {
+		// Scroll down
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scroll(0, 300)");
+		
+		// Check the shipping cost
 	    String shippingCost = driver.findElement(By.xpath("//*[@id=\"checkout-review-table\"]/tfoot/tr[2]/td[2]/span")).getText();
 	    System.out.println("Shipping cost: " + shippingCost);
 	}

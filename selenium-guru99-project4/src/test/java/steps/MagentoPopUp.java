@@ -1,4 +1,4 @@
-package test.Cucumber;
+package steps;
 
 import static org.testng.Assert.assertEquals;
 
