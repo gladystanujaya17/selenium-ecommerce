@@ -1,6 +1,6 @@
 # Selenium Guru99 10 Demo Project
 
-Here is the 10 test cases that needs to be automated using Selenium in Eclipse Java:
+Here is the 10 test cases that needs to be automated using Selenium and TestNG framework in Eclipse Java:
 
 ## Case 1
 Verify item in Mobile List page can be sorted by 'Name'
