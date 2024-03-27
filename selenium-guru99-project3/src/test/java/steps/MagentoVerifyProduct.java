@@ -79,4 +79,22 @@ public class MagentoVerifyProduct {
 	    driver.quit();
 	}
 	
+	@Then("User rechange the QTY")
+	public void userRechangeTheQTY() {
+		// Using CSS Selectors ID
+		driver.findElement(By.xpath(".//*[@id='shopping-cart-table']/tbody/tr/td[4]/input")).clear();	    
+		driver.findElement(By.xpath(".//*[@id='shopping-cart-table']/tbody/tr/td[4]/input")).sendKeys("10");	
+		driver.findElement(By.xpath(".//*[@id='shopping-cart-table']/tbody/tr/td[4]/button")).click();
+	}
+
+	@Then("User verify quantity is changed")
+	public void userVerifyQuantityIsChanged() throws IOException, InterruptedException {
+	    scc = (scc + 1);
+	    File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	    String png = ("D:\\Guru99 eCommerce Live Project\\Day03_TestCase3\\Qty is changed " + scc + ".png");
+	    FileUtils.copyFile(screenshotFile, new File(png));
+	    Thread.sleep(2000);
+	    driver.quit();
+	}
+
 }
