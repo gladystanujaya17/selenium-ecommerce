@@ -31,3 +31,6 @@ Verify Discount Coupon works correctly
 
 ## Case 10
 Verify search functionality
+
+## Technologies Used
+- Eclipse (Java): The project is using Selenium Java to automate.
