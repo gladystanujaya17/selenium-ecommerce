@@ -34,4 +34,4 @@ Verify search functionality
 
 ## Technologies Used
 - Eclipse (Java): The project is using Selenium Java to automate.
-- Gherkin: Set of grammar rules that makes structured plain text for Cucumber to understand.
+- Cucumber BDD (Gherkin): Set of grammar rules that makes structured plain text for Cucumber to understand.
